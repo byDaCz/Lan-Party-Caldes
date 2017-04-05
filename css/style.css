@@ -1,5 +1,7 @@
-/* Columnes */
-    
+/* Columnes i variables generals */
+    a{text-decoration: none} 
+
+    body{overflow-y: visible}
     [class*="col"] {
         float: left;
         padding:0px 30px;
@@ -17,16 +19,21 @@
     .col10 {width: 83.33%;}
     .col11 {width: 91.66%;}
     .col12 {width: 100%;}
-    body{overflow-y: visible}
+   
 /* Menu */
     .rrss>a>img:hover{opacity: 1;}
     .rrss>a>img{color: white;width: 25px;height: 25px; opacity: 0.7}
     .rrss{position:fixed; margin:25px;}
-    .spoiler>ul>li>input{width:50px;margin-top: 10px;border-color: purple;border-radius: 5px;}
-    .spoiler{margin-left: -120px;}
+    .spoiler>ul>li>input{width:125px;margin-top: 10px;border-color: purple;border-radius: 5px;}
+    .spoiler{margin-left: -140px;}
     .logogran{width: 124px;left: 45%;z-index: 12;margin:0 auto;position: fixed}
     .logoback{margin:0 auto;left: 50%}
     .usuari{float: right;z-index: 15;position: fixed;right: 5%}
+    .botoa{margin-top: 30px}
+    .botoa>a{border:#9643d6 2px dotted;}
+    .botoa>a:hover{background-color: white;color:#9643d6;transition: 0.5s ease all;}
+    .spoiler>ul>li>a{width: 40%;background-color:#9643d6;color: white;padding: 10px;}
+    .pass{max-width: 64px}
     .header {
         background: #9643d6;
         background: -moz-linear-gradient(left, #9643d6 0%, rgba(79,35,112,1) 100%);
@@ -149,8 +156,8 @@
     margin-top: 20px;
     padding: 5px 20px;
     cursor: pointer;
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     background: url("../img/usuari.svg") no-repeat;
      z-index: 11;
     position:fixed; 
@@ -161,7 +168,7 @@
     }
     /* Estilo caja SPOILER (inicialmente oculto) */
     input[id^="spoiler"] ~ .spoiler {
-    width: 200px;
+    width: 300px;
     height: 0;
     overflow: hidden;
     opacity: 0;
@@ -176,7 +183,52 @@
     color: black;
      z-index: 11;
     position:fixed;
-    margin-top: 75px; 
+    margin-top: 78px; 
+    padding:20px;
+    border:solid 2px #9643d6;
+    }
+
+/*BURGUER*/
+    /* Ocultar botón radio */
+    input[id^="burguer"]{
+    display: none;
+    padding-top: 180px;
+    float: right;
+    }
+    /* Estilo botón clicable */
+    input[id^="burguer"] + label {
+    display: block;
+    margin-top: 20px;
+    padding: 5px 20px;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    background: url("../img/burguer.svg") no-repeat;
+     z-index: 11;
+    position:fixed; 
+    }
+    /* Estilo botón cuando su INPUT está seleccionado */
+    input[id^="burguer"]:checked + label {
+    color: #333;
+    }
+    /* Estilo caja SPOILER (inicialmente oculto) */
+    input[id^="burguer"] ~ .burguer {
+    width: 300px;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 11;
+    position:fixed; 
+    }
+    /* Estilo caja SPOILER cuando su INPUT está seleccionado */
+    input[id^="burguer"]:checked + label + .burguer{
+    height: auto;
+    opacity: 1;
+    background-color: #9643d6;
+    color: black;
+     z-index: 11;
+    position:fixed;
+    margin-top: 78px; 
     padding:20px;
     }
 /* Landing page */
@@ -203,10 +255,16 @@
                  -webkit-text-stroke-color: white;}
     .participa>a{background-color: white;color: #9643d6; width: 150px; border: #9643d6 solid 2px;padding: 20px;top: 50px;}
     .participa{margin:0 auto; width: 120px;margin-top: 50px;}
-    .participa>a:hover,.mes>a:hover{background-color:#9643d6;color: white; }
+    .participa>a:hover,.mes>a:hover{background-color:#9643d6;color: white;  transition: 0.5s ease all;}
 
     .footer{padding:0px 3% 0px 3%; overflow:auto;background-color: white;}
-    .footer>img{max-height: 60px;width: auto;float: left;margin:20px 10px;}
+    .footer>img{max-height: 60px;width: auto;float: left;margin:20px 10px;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: gray;}
     .footer>h1{float:left;margin:40px;}
     
 /*Video + Text Inici */
@@ -805,32 +863,43 @@ h1 {font-family: "Gilroy Extrabold", sans-serif; font-size: 20px;}
 
     
 /*minim d'ample 992px, desktop 3x4, ipad horizontal*/
-    @media (min-width: 1200px) {
-
+    @media (min-width: 850px) {
+            .burguer{display: none}
         }
 
 /*per un maxim 767px d'ample, mobil*/
-    @media (max-width: 767px) {
-        /* Columnes */
-    {
-        box-sizing: border-box;
-    }
+    @media (max-width: 850px) {
     
-    [class*="col"] {
-        float: left;
-        padding:0px;
-    }
-    .col1 {width: 100%;}
-    .col2 {width: 100%;}
-    .col3 {width: 100%;}
-    .col4 {width: 100%;}
-    .col5 {width: 100%;}
-    .col6 {width: 100%;}
-    .col7 {width: 100%;}
-    .col8 {width: 100%;}
-    .col9 {width: 100%;}
-    .col10 {width: 100%;}
-    .col11 {width: 100%;}
-    .col12 {width: 100%;}
+            [class*="col"] {
+                float: left;
+                padding:0px;
+                margin:0 auto;
+            }
+            .col1 {width: 100%;}
+            .col2 {width: 100%;}
+            .col3 {width: 100%;}
+            .col4 {width: 94%;margin-left: 3%;}
+            .col5 {width: 100%;}
+            .col6 {width: 100%;}
+            .col7 {width: 100%;}
+            .col8 {width: 100%;}
+            .col9 {width: 100%;}
+            .col10 {width: 100%;}
+            .col11 {width: 100%;}
+            .col12 {width: 100%;}
+               
+            .logoback{display: none}
+            .menu{display: none}
+            .deco {left: 3%}
+            .footer>img{max-width: 40%}
+            .parallax{padding:50px 0px;}
+            .inici{padding:50px 0px;}
+            .header{height:70px;width: 100%;position: fixed;padding-bottom:50px;bottom: 0}
+            .usuari{bottom:65px;right: 70px}
+            .spoiler{bottom:100px;}
+            .header>h1{display: none}
+             .burguer>nav>a{color: black}
+             .burguer{float: right;z-index: 17;position: fixed;right: 5%;
+                        bottom:70px;right: 50%;background-color: red;background-image: }
+            .burguer>nav{padding:90px;}
         }
-       

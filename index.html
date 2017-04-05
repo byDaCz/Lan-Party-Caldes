@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/reset.css" type="text/css" rel="stylesheet"/>
 	<link href="css/style.css" media="screen" type="text/css" rel="stylesheet"/>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/menu.js"></script>
 </head>
 <body>
 	<!-- Header z-index 2 -->
@@ -21,7 +23,11 @@
                     </li>
                     <li>
                         <label for="pass">Contrasenya</label>
-                        <input type="text" id="pass" name="pass"/>
+                        <input type="password" id="pass" name="pass" class="pass" />
+                    </li>
+                    <li class="botoa">
+                    	<a href="#entrar">Entrar</a>
+                    	<a href="#registrar">Registrar</a>
                     </li>
                    </ul>
                    </div>
@@ -33,6 +39,19 @@
 		<a href="#youtube"><img src="img/youtube.svg"></a>
 			
 		</div>
+	<div class="burguer">
+		<input type="checkbox" id="burguer"></input>
+			<label for="burguer"></label>
+				<div class="burguer">
+					<nav class="cl-effect-21" id="cl-effect-21">
+					<a href="#cl-effect-21">Informació</a>
+					<a href="#cl-effect-21">Activitats</a>
+					<a href="#cl-effect-21">Torneigs</a>
+				</nav>
+                   </div>
+		</div>
+
+
 		<h1>LAN PARTY CALDES</h1>
 		<section class="menu">
 				<nav class="cl-effect-21" id="cl-effect-21">
@@ -41,7 +60,8 @@
 					<a href="#cl-effect-21">Torneigs</a>
 				</nav>
 			</section> 
-	
+
+
 	</div>	
 <div class="logoback">
 		<div class="logogran"><img src="img/logo_bandera.svg"></div>
