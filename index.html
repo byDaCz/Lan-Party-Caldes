@@ -1,74 +1,204 @@
 <!DOCTYPE html>
-<html lang="es" xml:lang="es">
+<html lang="ca" xml:lang="ca">
 
 <head>
 	<title>LAN PARTY CALDES</title>
+		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="css/reset.css" type="text/css" rel="stylesheet"/>
 	<link href="css/style.css" media="screen" type="text/css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script src="js/menu.js"></script>
+	 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+
+	<script type="text/javascript"></script>
+	<script>
+		/* --------------------------
+		 * GLOBAL VARS
+		 * -------------------------- */
+		// The date you want to count down to
+		var targetDate = new Date("2017/10/15 00:00:00");   
+
+		// Other date related variables
+		var days;
+		var hrs;
+		var min;
+		var sec;
+
+		/* --------------------------
+		 * ON DOCUMENT LOAD
+		 * -------------------------- */
+		$(function() {
+		   // Calculate time until launch date
+		   timeToLaunch();
+		  // Transition the current countdown from 0 
+		  numberTransition('#days .number', days, 1000, 'easeOutQuad');
+		  numberTransition('#hours .number', hrs, 1000, 'easeOutQuad');
+		  numberTransition('#minutes .number', min, 1000, 'easeOutQuad');
+		  numberTransition('#seconds .number', sec, 1000, 'easeOutQuad');
+		  // Begin Countdown
+		  setTimeout(countDownTimer,1001);
+		});
+
+		/* --------------------------
+		 * FIGURE OUT THE AMOUNT OF 
+		   TIME LEFT BEFORE LAUNCH
+		 * -------------------------- */
+		function timeToLaunch(){
+		    // Get the current date
+		    var currentDate = new Date();
+
+		    // Find the difference between dates
+		    var diff = (currentDate - targetDate)/1000;
+		    var diff = Math.abs(Math.floor(diff));  
+
+		    // Check number of days until target
+		    days = Math.floor(diff/(24*60*60));
+		    sec = diff - days * 24*60*60;
+
+		    // Check number of hours until target
+		    hrs = Math.floor(sec/(60*60));
+		    sec = sec - hrs * 60*60;
+
+		    // Check number of minutes until target
+		    min = Math.floor(sec/(60));
+		    sec = sec - min * 60;
+		}
+
+		/* --------------------------
+		 * DISPLAY THE CURRENT 
+		   COUNT TO LAUNCH
+		 * -------------------------- */
+		function countDownTimer(){ 
+		    
+		    // Figure out the time to launch
+		    timeToLaunch();
+		    
+		    // Write to countdown component
+		    $( "#days .number" ).text(days);
+		    $( "#hours .number" ).text(hrs);
+		    $( "#minutes .number" ).text(min);
+		    $( "#seconds .number" ).text(sec);
+		    
+		    // Repeat the check every second
+		    setTimeout(countDownTimer,1000);
+		}
+
+		/* --------------------------
+		 * TRANSITION NUMBERS FROM 0
+		   TO CURRENT TIME UNTIL LAUNCH
+		 * -------------------------- */
+		function numberTransition(id, endPoint, transitionDuration, transitionEase){
+		  // Transition numbers from 0 to the final number
+		  $({numberCount: $(id).text()}).animate({numberCount: endPoint}, {
+		      duration: transitionDuration,
+		      easing:transitionEase,
+		      step: function() {
+		        $(id).text(Math.floor(this.numberCount));
+		      },
+		      complete: function() {
+		        $(id).text(this.numberCount);
+		      }
+		   }); 
+		};
+	</script>
+	
 </head>
 <body>
+
 	<!-- Header z-index 2 -->
 	<div class="usuari">
 		<input type="checkbox" id="spoiler1"></input>
 			<label for="spoiler1"></label>
 			<div class="spoiler">
 				<ul>
+					<form action="/usuari.php">
                     <li>
-                        <label for="name">Nom</label>
-                        <input type="text" id="name" name="name"/>
+                        <label for="nom">Usuari</label>
+                        <input type="text" id="nom" name="nom" style="margin-left: 3px" />
                     </li>
                     <li>
-                        <label for="pass">Contrasenya</label>
-                        <input type="password" id="pass" name="pass" class="pass" />
+                        <label for="pass">Correu</label>
+                        <input type="password" id="pass" name="contacte" class="contacte" />
                     </li>
                     <li class="botoa">
-                    	<a href="#entrar">Entrar</a>
-                    	<a href="#registrar">Registrar</a>
+                    	<input type="submit" value="Inicia Sessió">
                     </li>
+                    </form>
                    </ul>
                    </div>
 		</div>
 	<div class="header">
 		<div class="rrss">
-		<a href="#twitter"><img src="img/twitter.svg"></a>
-		<a href="#facebook"><img src="img/facebook.svg"></a>
-		<a href="#youtube"><img src="img/youtube.svg"></a>
+		<a href="https://twitter.com/search?f=tweets&q=%23LanPartyCaldes&src=typd" target="_blank"><img src="img/twitter.svg"></a>
+		<a href="https://www.facebook.com/events/1031328173668721/" target="_blank"><img src="img/facebook.svg"></a>
+		<a href="https://www.youtube.com/user/byDaCz" target="_blank"><img src="img/youtube.svg"></a>
 			
 		</div>
 	<div class="burguer">
 		<input type="checkbox" id="burguer"></input>
 			<label for="burguer"></label>
 				<div class="burguer">
-					<nav class="cl-effect-21" id="cl-effect-21">
-					<a href="#cl-effect-21">Informació</a>
-					<a href="#cl-effect-21">Activitats</a>
-					<a href="#cl-effect-21">Torneigs</a>
+					<nav class="mobil">
+					<div class="mobilcenter">
+					<li><a href="index.html">Inici</a></li>
+					<li><a href="informacio.html">Info</a></li>
+					<li><a href="activitats.html">Activitats</a></li>
+					<li><a href="torneigs.html">Torneigs</a></li>
+					</div>
 				</nav>
                    </div>
 		</div>
 
 
 		<h1>LAN PARTY CALDES</h1>
+		</div>	
+
 		<section class="menu">
 				<nav class="cl-effect-21" id="cl-effect-21">
-					<a href="#cl-effect-21">Informació</a>
-					<a href="#cl-effect-21">Activitats</a>
-					<a href="#cl-effect-21">Torneigs</a>
+					<li class="desple"><a href="informacio.html">Informació</a>
+						<div class="n desplegables">
+							<div style="float:right">
+								<a href="informacio.html#normativa">Normativa</a>
+								<a href="informacio.html#portar">Que has de portar</a>
+								<a href="informacio.html#menors">Menors</a></div><a class="crop" href="index.html"></a><div  class="menufix">
+								<a href="informacio.html#que">Que es</a>
+								<a href="informacio.html#on">On s'ubica</a>
+								<a href="informacio.html#qui">Qui organitza</a></div>
+							
+							
+						</div></li>
+					<li><a href="activitats.html">Activitats</a></li>
+					<li><a href="torneigs.html">Torneigs</a></li>
 				</nav>
 			</section> 
-
-
-	</div>	
 <div class="logoback">
-		<div class="logogran"><img src="img/logo_bandera.svg"></div>
+		<div class="creditos"><p style="float: left"> Web creada por: Dani Castillo</p><p style="float: right"> Proyecto final de Diseño Gráfico Interactivo: La Llotja</p></div>
+		<div class="logogran"><a href="index.html"><img src="img/logo_bandera.svg"></a></div>
 		</div>
 <div class="fullscreen-bg">
     <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
         <source src="vid/inici.mp4" type="video/mp4">
+        <source src="vid/inici.webm" type="video/webm">
     </video>
 </div>
 
@@ -115,52 +245,123 @@
 	    </div>
 	</section>
 	<div class="color">
-		<div class="col4">
-			<div class="deco">
-			  <h1>CS : GO</h1>
-			  <div style="background:url(img/logocsb.png);background-size: cover;"><img src="img/logocs.png" alt="logo cs:go">
-			  	</div>
-			  <p>Counter Strike és el shooter més competitiu actualment, la extrapolació a la vida real será a través del camp d'Airsoft Fort Negrell</p>
-			  <p>Format: 5v5</p>
-			  <p>Premi: A definir</p>
-			  <section class="mes"><a href="#">Coneixer més</a></section>
+			<div class="col4">
+				<div class="border">
+					<img src="img/i2.png" alt="video">
+					<h3>VIDEO PROMOCIONAL</h3>
+					<div class="h3back"></div>
+					<div class="bordertop">
+						<p class="left">30 segons de hype</p>
+					</div>
+					<p>Viu i comparteix el hype de l'esdeveniment, ja pots consultar el video promocional i compartir-lo a les xarxes socials.</p>
+					<p>Consegueix que més persones participin a l'esdeveniment compartint el video amb els amics, com més siguem més bé ens ho pasarem.</p>
+					<a class="more" href="https://youtu.be/NLPvU-Qddok"></a>
+				</div>
 			</div>
-		</div>
 		<div class="col4">
-			<div class="deco">
-			  <h1>League of Legends</h1>
-			   <div style="background:url(img/logololb.png);background-size: cover;"><img src="img/logolol.png" alt="logo League of Legends">
-			   </div>
-			  <p>League of Legends continuará sent un dels referents a Caldes, tindrem espectacles de cosplay, classes d'aprenentatge i més.</p>
-			  <p>Format: 5v5</p>
-			  <p>Premi: A definir</p>
-			  <section class="mes"><a href="#">Coneixer més</a></section>
+				<div class="border">
+					<img src="img/i1.png" alt="finals">
+					<h3>FINALS EN DIRECTE</h3>
+					<div class="h3back"></div>
+					<div class="bordertop">
+						<p class="left">Vine i anima</p>
+					</div>
+					<p>Vina a animar als equips en directe a un escenari muntat per a la ocasió, posteriorment hi haurán unes xerrades amb els participants.</p>
+					<p>No et pots perdre el berenar de comiat posterior a les xerrades. T'hi esperem.</p>
+					<a class="more" href="activitats.html"></a>
+				</div>
 			</div>
-		</div>
-		<div class="col4">
-			<div class="deco">
-			  <h1>Fifa 17</h1>
-			   <div style="background:url(img/logofifa17b.png);background-size: cover;"><img src="img/logofifa17.png" alt="logo fifa">
-			   </div>
-			   <p>El futbol está present en aquesta nova edició amb FIFA17, a part el torneig finalitzará amb un partit en fisic al camp de futbol local.</p>
-			   <p>Format: 11v11</p>
-			  <p>Premi: A definir</p>
-			  <section class="mes"><a href="#">Coneixer més</a></section>
+			<div class="col4">
+				<div class="border">
+					<img src="img/a3.jpg" alt="LILDAMI">
+					<h3>CONCERT LILDAMI</h3>
+					<div class="h3back"></div>
+					<div class="bordertop">
+						<p class="left">Coneix a l'artista</p>
+					</div>
+					<p>En LILDAMI canta Trap en català. Un artista que porta poc més d'un any cantant i que ja ha arribat amunt</p>
+					<p>Si vols conéixer més d'ell pots seguir-lo per instagram, visitar el seu canal de youtube o anar a un concert abans de la Lan Party Caldes.</p>
+					<a class="more" href="https://www.instagram.com/lildami/?hl=es"></a>
+				</div>
 			</div>
-		</div>
 		</div>	
 
-		<div class="col12 parallax"> <h1>PARTICIPA GRATÜITAMENT I CONSEGUEIX PREMIS NOMÉS PER VENIR A L'ESDEVENIMENT</h1> <div class="participa"><a href="#unir">PARTICIPA</a></div> </div>
+	<div class="col12 parallax"> 
+		<ul id="countdown">
+			  <li id="days">
+			    <div class="number">00</div>
+			    <div class="label">Dies</div>
+			  </li>
+			  <li id="hours">
+			    <div class="number">00</div>
+			    <div class="label">Hores</div>
+			  </li>
+			  <li id="minutes">
+			    <div class="number">00</div>
+			    <div class="label">Minuts</div>
+			  </li>
+			  <li id="seconds">
+			    <div class="number">00</div>
+			    <div class="label">Segons</div>
+			  </li>
+		</ul>
+	</div>
+	
+	<div class="color">
 
+		<div class="container">
+			<h5>Participa-hi</h5>
+		  <form action="/dades.php">
+
+		    <label for="nom">Nom</label>
+		    <input type="text" class="nom" id="nom" name="nom" placeholder="El teu nom">
+
+		    <label for="contacte">Correu electrónic</label>
+		    <input type="text" class="nom" id="contacte" name="contacte" placeholder="Correu electronic">
+
+		    <label for="torneig">Torneig</label>
+		    <select id="torneig" name="torneig">
+		      <option value="lol">LoL</option>
+		      <option value="csgo">CS:GO</option>
+		      <option value="fifa">Fifa 17</option>
+		    </select>
+
+		    <label for="text">Text</label>
+		    <textarea id="text" name="text" placeholder="Nicks dels components de l'equip" style="height:200px"></textarea>
+
+		    <input type="submit" value="Enviar formulari">
+
+		  </form>
+		</div>
+
+		<div class="container">
+			<h5>Contacta'ns</h5>
+		  <form action="/mail.php">
+
+		    <label for="nom">Nom</label>
+		    <input type="text" class="nom" id="nom" name="nom" placeholder="El teu nom">
+
+		    <label for="contacte">Métode de contacte</label>
+		    <input type="text" class="nom" id="asunto" name="asunto" placeholder="Correu electrónic o teléfon">
+
+		    <label for="text">Text</label>
+		    <textarea type="text" id="message" name="message" placeholder="Escriu aqui el seu missatge" style="height:280px"></textarea>
+
+		    <input type="submit" value="Enviar formulari">
+
+		  </form>
+		</div>
+
+	</div>
 
 
 	<div class="footer">
 		  <h1>Col·labora:</h1>
-		  <img src="img/logovalve.png" alt="logo valve">
-		  <img src="img/logoriot.png" alt="logo Riot Games">
-		  <img src="img/logoea.svg" alt="logo Electronic Arts">
-		  <img src="img/logosil.png" alt="logo Stick it Love it">
-		  <img src="img/logonj.png" alt="logo Nervi Jove">
+		  <div><img src="img/logovalve.png" alt="logo valve"></div>
+		  <div> <img src="img/logoriot.png" alt="logo Riot Games"></div>
+ 		  <div><img src="img/logoea.png" alt="logo Electronic Arts"></div>
+		  <div><img src="img/logosil.png" alt="logo Stick it Love it"></div>
+		  <div><img src="img/logonj.png" alt="logo Nervi Jove"></div>
 		</div>
 
 

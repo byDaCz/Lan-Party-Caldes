@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+
+<head>
+	<title>LAN PARTY CALDES</title>
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/reset.css" type="text/css" rel="stylesheet"/>
+	<link href="css/style.css" media="screen" type="text/css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/menu.js"></script>
+	<script>
+		$(document).ready(function(){
+		  // Add smooth scrolling to all links
+		  $("a").on('click', function(event) {
+
+		    // Make sure this.hash has a value before overriding default behavior
+		    if (this.hash !== "") {
+		      // Prevent default anchor click behavior
+		      event.preventDefault();
+
+		      // Store hash
+		      var hash = this.hash;
+
+		      // Using jQuery's animate() method to add smooth page scroll
+		      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+		      $('html, body').animate({
+		        scrollTop: $(hash).offset().top
+		      }, 800, function(){
+		   
+		        // Add hash (#) to URL when done scrolling (default click behavior)
+		        window.location.hash = hash;
+		      });
+		    } // End if
+		  });
+		});
+		</script>
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+<body class="fix">
+	<!-- Header z-index 2 -->
+	<div class="usuari">
+		<input type="checkbox" id="spoiler1"></input>
+			<label for="spoiler1"></label>
+			<div class="spoiler" style="margin-top: 110px">
+				<ul>
+					<form action="/usuari.php">
+                    <li>
+                        <label for="nom">Usuari</label>
+                        <input type="text" id="nom" name="nom" style="margin-left: 3px" />
+                    </li>
+                    <li>
+                        <label for="pass">Correu</label>
+                        <input type="password" id="pass" name="contacte" class="contacte" />
+                    </li>
+                    <li class="botoa">
+                    	<input type="submit" value="Inicia Sessió">
+                    </li>
+                    </form>
+                   </ul>
+                   </div>
+		</div>
+	<div class="header">
+		<div class="rrss">
+		<a href="https://twitter.com/search?f=tweets&q=%23LanPartyCaldes&src=typd" target="_blank"><img src="img/twitter.svg"></a>
+		<a href="https://www.facebook.com/events/1031328173668721/" target="_blank"><img src="img/facebook.svg"></a>
+		<a href="https://www.youtube.com/user/byDaCz" target="_blank"><img src="img/youtube.svg"></a>
+			
+		</div>
+	<div class="burguer">
+		<input type="checkbox" id="burguer"></input>
+			<label for="burguer"></label>
+				<div class="burguer">
+					<nav class="mobil">
+					<div class="mobilcenter">
+					<li><a href="index.html">Inici</a></li>
+					<li><a href="informacio.html">Info</a></li>
+					<li><a href="activitats.html">Activitats</a></li>
+					<li><a href="torneigs.html">Torneigs</a></li>
+					</div>
+				</nav>
+                   </div>
+		</div>
+
+
+		<h1>LAN PARTY CALDES</h1>
+		</div>	
+
+		<section class="menu">
+				<nav class="cl-effect-21" id="cl-effect-21">
+					<li class="desple"><a href="informacio.html" class="active">Informació</a>
+						<div class="y desplegables">
+							<div style="float:right">
+								<a href="informacio.html#normativa">Normativa</a>
+								<a href="informacio.html#portar">Que has de portar</a>
+								<a href="informacio.html#menors">Menors</a></div><a class="crop" href="index.html"></a><div  class="menufix">
+								<a href="informacio.html#que">Que es</a>
+								<a href="informacio.html#on">On s'ubica</a>
+								<a href="informacio.html#qui">Qui organitza</a></div>
+							
+							
+						</div></li>
+					<li><a href="activitats.html">Activitats</a></li>
+					<li><a href="torneigs.html">Torneigs</a></li>
+				</nav>
+			</section> 
+<div class="logoback">
+		<div class="creditos"><p style="float: left"> Web creada por: Dani Castillo</p><p style="float: right"> Proyecto final de Diseño Gráfico Interactivo: La Llotja</p></div>
+		<div class="logogran"><a href="index.html"><img src="img/logo_bandera.svg"></a></div>
+		</div>
+
+<a id="que"></a>
+		<div class="seccio">
+		
+		<div class="col5 itext">
+		<h5> Que es?</h5>
+		
+			<p>Caldes Lan Party va néixer com un esdeveniments entre amics, gràcies a l’acció del Nervi Jove organitzat per l’Ajuntament de Caldes de Montbui.</p>
+			<p>En darreres edicions els torneigs han estat on-line, permeten que més persones participin, enguany el concepte es reinventa</p>
+			<p>Tots els torneigs tenen una final presencial on es transportará el videojoc a la realitat gràcies a l’ajuda del camp d’airsoft Fort Negrell i el camp de fútbol de Les Cremades.</p>
+			<p>L'equip de la Lan Party Caldes.</p>
+		</div>
+		<div class="iright quees"></div>
+		</div>
+<a id="on"></a>
+		<div class="seccio">
+		
+			<div class="col5 itext">
+				<h5> On s'ubica</h5>
+		
+				<p>La lan party es durá a terme en diferents espais, el centre de tot será el TOC de Caldes de Montbui, on es farán xerrades i tallers dels videojocs que s’inclouen en els torneigs. </p>
+				<p>
+				Les finals dels torneigs es durán a terme en els seus camps de joc respectivament. La final de FIFA17 es durá a terme al camp esportiu Les Cremades. La final de CS:GO es durá a terme en el camp d’airsoft Fort Negrell.</p>
+				<p>Recomanem descarregar el pdf que trobareu a conitinuació en cas que no pugueu utilitzar els mapes proporcionats.</p>
+
+			</div>
+			<div class="iright"> 
+				<iframe
+					width="100%"
+					height="100%"
+					  frameborder="0" style="border:0"
+					  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCvgYgzBNkmulwYNF4tw38oXTseLRUUVMY&q=Espai+Jove+El+Toc" allowfull
+					screen>
+					</iframe>
+				<div class="ibotons">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div></div>
+			</div>
+		</div>
+<a id="qui"></a>
+		<div class="seccio">
+		
+		<div class="col5 itext">
+		<h5> Organitza</h5>
+		
+			<p>L’organització recau quasi en la seva totalitat en Dani Castillo, un jove que un dia va tenir la idea de crear cohesió entre els jugadors de Caldes. L’apartat gráfic recau en les seves mans, si voleu conéixer més visiteu: <a href="https://www.bydacz.com">www.bydacz.com</a></p>
+
+			<p>Tot i que en Dani és la cara visible del projecte, la Lan Party l’organitzen els joves de Caldes en una assamblea  oberta al públic. En aquesta assamblea es decideixen les activitats que es durán a terme dins de l’esdeveniment així com on es destinen els diners. </p>
+
+			<p>Si vols participar a nivell organitzatiu i/o assistir a la assamblea, posa’t en <a href="#contacte">contacte</a> amb nosaltres.</p>
+		</div>
+		<div class="iright qui"></div>
+		</div>
+<a id="normativa"></a>
+		<div class="seccio">
+		
+		<div class="col5 itext">
+		<h5> Normativa</h5>
+		
+			<p>Amb la sol·licitud de participació, s’accepten sense restriccions els termes i condicions que es detallen a continuació:</p>
+			<p>L’organització de la Lan Party Caldes es reserva el dret de modificar total o parcialment, els presents termes i condicions en qualsevol moment.</p>
+			<p>Aquests canvis o modificacions es notificaran mitjançant la publicació en aquesta mateixa pàgina web o via correu electrònic a aquelles persones inscrites.</p>
+			<p>Si per qualsevol motiu no accepta els termes i condicions, finalitzi la inscripció en la Lan Party Caldes aquí mateix.</p>
+		</div>
+		<div class="itext col5 if"> 
+		<p>Podran participar en la MLP:</p>
+		<p>Persones físiques majors d’edat. Persones físiques d’entre 14 i 18 anys amb la corresponent autorització signada pels pares o tutors del participant</p>
+		<p>Persones físiques menors de 14 anys acompanyats d’un major d’edat que es responsabilitzi d’elles. En aquells casos en els quals l’acompanyant, responsable del menor, no fos pare o tutor, aquest haurà de presentar la deguda autorització en la qual ha de constar les dades personals del participant menor de 14 anys, així com les dades personals del responsable del mateix. Aquesta autorització haurà d’anar signada degudament pels pares o tutors del menor.</p>
+		<p>Les places per participar en la Lan Party Caldes són limitades i per estricte ordre d’arribada dels formularis d’inscripció degudament complementats. L’organització de la Lan Party Caldes es reserva la facultat d’adoptar criteris alternatius sense necessitat de previ avís.</p>
+		<p>
+		L’organització es reserva el dret d’admissió de les sol·licituds de participació de l’esdeveniment.</p></div>
+		</div>
+<a id="portar"></a>
+		<div class="seccio">
+		
+		<div class="col5 itext">
+		<h5> Que portar</h5>
+		
+			<p>Per poder participar presencialment a l’esdeveniment has de portar:</p>
+			<p>- PC o Portátil</p><p>- Perifèrics</p>
+			<p>L’organització us proporcionará un espai amb cable ethernet i una conexió wifi. Aquests espais están equipats amb taules i cadires.</p>	
+			<p>A l’iniciar l’esdeveniment cada participant rebrá un pack de benvinguda amb menjar i aigua per poder estar al 100% durant el dia.</p>
+		</div>
+		<div class="iright portar"></div>
+		</div>
+<a id="menors"></a>
+		<div class="seccio" style="margin-bottom: 93px">
+		
+		<div class="col5 itext">
+		<h5> Menors</h5>
+		
+			<p>Els menors de 14 anys han d’assistir acompanyats d’un major d’edat que es responsabilitzi d’ells. </p>
+			<p>En aquells casos en els quals l’acompanyant, responsable del menor, no fos pare o tutor, aquest haurà de presentar la deguda autorització en la qual ha de constar les dades personals del participant menor de 14 anys, així com les dades personals del responsable del mateix. </p>
+			<p>Aquesta autorització haurà d’anar signada 
+			degudament pels pares o tutors del menor.</p>
+
+			<p>Podeu descarregar la autorització aquí:</p>
+		</div>
+		<div class="iright menors"></div>
+		</div>
+
+		<div class="space"></div>
+
+
+		
+	
+
+
+
+
+
+<footer>
+
+</footer>
+
+	
+
+</body>
+
+
